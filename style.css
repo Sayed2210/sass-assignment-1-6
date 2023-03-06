@@ -1,0 +1,46 @@
+.contact {
+  padding: 20px;
+}
+
+.my-class {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.my-class {
+  border: 1px solid #ccc;
+}
+
+.my-class {
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+.box p, .box h2 {
+  font-size: 20px;
+}
+
+@media (max-width: 575px) {
+  .box h2, .box p {
+    font-size: 16px;
+  }
+  .box p span, .box h2 span {
+    font-weight: bold;
+  }
+}
+.box a {
+  color: #009688;
+}
+.box a:hover {
+  color: #ff0000;
+}
+
+.container {
+  font-size: 20px;
+}
+.container-holder {
+  width: 10000px;
+}
+.container-holder-content {
+  margin: auto;
+}

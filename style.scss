@@ -1,0 +1,158 @@
+// import global rules
+@use "./sass/layout/global-rules";
+//import contact
+@use "./sass/pages/contact";
+//import Variables
+@use "./sass/Variables/variables.scss" as *;
+$alt_color: #ff0000;
+// .header {
+//     color: $alt_color;
+// }
+// .links {
+//     color: $main_color;
+// }
+// .landing {
+//     color: $altn_color;
+// }
+// .content {
+//     > .box {
+//         padding: 15px;
+//         > .title {
+//             font-size: 25px;
+//         }
+//     }
+//     .cat {
+//         padding: 15px;
+//     }
+//     &.premium::before{
+//         content: 'Premium Box';
+//     }
+//     &.premium::hover{
+//         background-color: #eee;
+//     }
+// }
+// .class > {
+//     .child {
+//         padding: 10px;
+//     }
+// }
+// .class {
+//     > .child {
+//         padding: 10px;
+//     }
+// }
+// .class {
+//     > {
+//         .child {
+//             padding: 10px;
+//         }
+//     }
+// }
+// .class {
+//     font: {
+//         size: 25px;
+//         weight: 16px;
+//     }
+// }
+// .parent {
+//     & + .sibling {
+//         margin: auto {
+//             top: 10px;
+//         }
+//         & ~ .last {
+//             padding: 10px;
+//         }
+//     }
+// }
+// .widget {
+//     background-color: white;
+//     padding: 20px;
+// }
+// .main-border {
+//     border: 1px solid #ccc;
+// }
+// .my-class {
+//     font-weight: bold;
+//     margin: 20px auto; 
+// }
+// .my-class {
+//     @extend .widget;
+// }
+// .my-class {
+//     @extend .main-border;
+// }
+// .my-class {
+//     @extend .my-class;
+// }
+%widget {
+    background-color: #fff;
+    padding: 20px;
+}
+%main-border {
+    border: 1px solid #ccc;
+}
+%my-class {
+    font-weight: bold;
+    margin: 20px auto;
+}
+.my-class {
+    @extend %widget;
+}
+.my-class {
+    @extend %main-border;
+}
+.my-class {
+    @extend %my-class;
+}
+%font-size {
+    font-size: 20px;
+}
+.box {
+    h2 {
+        @extend %font-size;
+    }
+    p {
+        @extend %font-size;
+    }
+}
+
+$max_width : "max-width: 575px";
+@media ($max-width) {
+    .box {
+        %font-size {
+            font-size: 16px;
+        }
+        %font-weight {
+            font-weight: bold;
+        }
+        h2 {
+            @extend %font-size;
+            span {
+                @extend %font-weight;
+            }
+        }
+        p {
+            @extend %font-size;
+            span {
+                @extend %font-weight;
+            }
+        }
+    }
+}
+$red: #e91e63;
+$green: #009688;
+.box a {
+    color: $green;
+    &:hover {
+        color: #ff0000;
+    }
+}
+.container {
+    font-size: 20px;
+    &-holder {
+        width: 10000px;
+        &-content {
+            margin: auto;
+        }
+    }
+}
